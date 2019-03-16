@@ -1,0 +1,14 @@
+﻿@model IEnumerable<assignment1.Models.ApplicationRole>
+
+@{
+    ViewData["Title"] = "Users & Roles";
+}
+
+    <h2>Users & Roles</h2>
+    <h4>Manage Users or Roles from the link below</h4>
+
+    <!-- Links to each "Users", "Roles" page-->
+    <h3><a asp-area="" asp-controller="ApplicationUsers" asp-action="Index">Users</a></h3>
+    <h3><a asp-area="" asp-controller="ApplicationRoles" asp-action="Index">Roles</a></h3>
+
+

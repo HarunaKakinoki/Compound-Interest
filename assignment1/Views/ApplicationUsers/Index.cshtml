@@ -1,0 +1,44 @@
+﻿@model IEnumerable<assignment1.Models.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h2>Registred Users</h2>
+<h4>Manage users here.</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                User Name
+            </th>
+            <th>
+                User ID
+            </th>
+            <th>
+                E-mail address
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.UserName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        <!--Links to other pages.-->
+        <a asp-action="AddRole" asp-route-id="@item.Id">Edit-Role</a>
+    </td>
+</tr>
+}
+    </tbody>
+</table>

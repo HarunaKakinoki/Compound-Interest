@@ -1,0 +1,37 @@
+﻿@model assignment1.Models.Calc.Calculator
+
+@{
+    ViewData["Title"] = "Calculator";
+
+    double result = 0;
+    if (TempData["result"] != null)
+    {
+        result = Convert.ToDouble(TempData["result"]);
+    }
+}
+
+<h3>Calculate Compound Interest here!</h3>
+
+<form method="post" class="center" action="setNumber">
+    <div class="center">
+
+        Principal:<br><input asp-for="PrincipalRate" id="num1" type="text" name="PrincipalRate" value=""><br>
+        Interest Rate:<br />
+        <input asp-for="InterestRate" type="text" name="InterestRate" value=""><br>
+        Time Per Year:<br>
+        <input asp-for="TimePerYear" type="text" name="TimePerYear" value=""><br>
+        Years:<br>
+        <input asp-for="Years" type="text" name="Years" value=""><br>
+        <br>
+        <br>
+        <input type="submit" value="Submit" class="submit btn btn-primary">
+    </div>
+</form>
+
+
+@if (TempData["result"] != null)
+{
+    <h2> Total: @result </h2>
+
+}
+
